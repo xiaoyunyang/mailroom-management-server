@@ -1,6 +1,6 @@
-import { Router } from 'express';
-import IndexController from '../controllers/index.controller';
-import Route from '../interfaces/routes.interface';
+import { Router } from "express";
+import IndexController from "../controllers/index.controller";
+import Route from "../interfaces/routes.interface";
 
 class IndexRoute implements Route {
   public router = Router();
@@ -11,7 +11,7 @@ class IndexRoute implements Route {
   }
 
   private initializeRoutes() {
-    this.router.get('/', this.indexController.index);
+    this.router.get("/", this.indexController.index);
   }
 }
 

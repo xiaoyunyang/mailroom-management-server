@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from 'express';
-import { CreateUserDto } from '../dtos/users.dto';
-import { User } from '../interfaces/users.interface';
-import userService from '../services/users.service';
+import { NextFunction, Request, Response } from "express";
+import { CreateUserDto } from "../dtos/users.dto";
+import { User } from "../interfaces/users.interface";
+import userService from "../services/users.service";
 
 class UsersController {
   public userService = new userService();
@@ -9,7 +9,7 @@ class UsersController {
   public getUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const findAllUsersData: User[] = await this.userService.findAllUser();
-      res.status(200).json({ data: findAllUsersData, message: 'findAll' });
+      res.status(200).json({ data: findAllUsersData, message: "findAll" });
     } catch (error) {
       next(error);
     }
@@ -20,7 +20,7 @@ class UsersController {
 
     try {
       const findOneUserData: User = await this.userService.findUserById(userId);
-      res.status(200).json({ data: findOneUserData, message: 'findOne' });
+      res.status(200).json({ data: findOneUserData, message: "findOne" });
     } catch (error) {
       next(error);
     }
@@ -31,7 +31,7 @@ class UsersController {
 
     try {
       const createUserData: User = await this.userService.createUser(userData);
-      res.status(201).json({ data: createUserData, message: 'created' });
+      res.status(201).json({ data: createUserData, message: "created" });
     } catch (error) {
       next(error);
     }
@@ -43,7 +43,7 @@ class UsersController {
 
     try {
       const updateUserData: User = await this.userService.updateUser(userId, userData);
-      res.status(200).json({ data: updateUserData, message: 'updated' });
+      res.status(200).json({ data: updateUserData, message: "updated" });
     } catch (error) {
       next(error);
     }
@@ -54,7 +54,7 @@ class UsersController {
 
     try {
       const deleteUserData: User = await this.userService.deleteUserData(userId);
-      res.status(200).json({ data: deleteUserData, message: 'deleted' });
+      res.status(200).json({ data: deleteUserData, message: "deleted" });
     } catch (error) {
       next(error);
     }

@@ -1,6 +1,14 @@
 {
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "jest": true
+  },
   "parser": "@typescript-eslint/parser",
-  "extends": ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
@@ -11,6 +19,28 @@
     "@typescript-eslint/no-parameter-properties": 0,
     "@typescript-eslint/interface-name-prefix": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/no-explicit-any": "off"
-  }
+    "@typescript-eslint/no-explicit-any": "off",
+    "quotes": [
+      "error",
+      "double"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "rules": {
+        "no-unused-vars": [
+          "off"
+        ],
+        "semi": 1,
+        "quote-props": [
+          "error",
+          "as-needed"
+        ]
+      }
+    }
+  ]
 }
