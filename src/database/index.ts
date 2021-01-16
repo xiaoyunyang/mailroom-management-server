@@ -1,10 +1,10 @@
-import Sequelize from "sequelize";
+import { Sequelize } from "sequelize";
 import config from "../config";
 import { logger } from "../utils/logger";
 import UserModel from "../models/users.model";
 
 const env = process.env.NODE_ENV || "development";
-const sequelize = new Sequelize.Sequelize(config[env].database, config[env].username, config[env].password, {
+const sequelize = new Sequelize(config[env].database, config[env].username, config[env].password, {
   host: config[env].host,
   dialect: config[env].dialect,
   timezone: "+09:00",
