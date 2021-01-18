@@ -1,4 +1,4 @@
-const dbConfig = {
+module.exports = {
   development: {
     username: "root",
     password: "password",
@@ -21,5 +21,3 @@ const dbConfig = {
     dialect: "postgres",
   },
 };
-
-export default dbConfig;

@@ -1,10 +1,12 @@
 import { Sequelize } from "sequelize";
-import config from "../config";
 import { logger } from "../utils/logger";
 import UserModel from "../models/user.model";
 import PackageModel from "../models/package.model";
 import ApartmentModel from "../models/apartment.model";
 import BuildingModel from "../models/building.model";
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const config = require("../config/db");
 
 const env = process.env.NODE_ENV || "development";
 const sequelize = new Sequelize(config[env].database, config[env].username, config[env].password, {

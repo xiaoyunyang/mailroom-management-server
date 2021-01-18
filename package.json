@@ -9,6 +9,8 @@
     "dev": "cross-env NODE_ENV=development nodemon",
     "build": "tsc",
     "test": "jest --forceExit --detectOpenHandles",
+    "db:unseed": "sequelize db:seed:undo:all",
+    "db:seed": "npm run db:unseed && sequelize db:seed:all",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix"
   },

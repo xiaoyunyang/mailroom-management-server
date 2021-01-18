@@ -8,6 +8,7 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
